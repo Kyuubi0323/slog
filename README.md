@@ -46,9 +46,9 @@ dependencies:
 
 ## Usage
 
-### Using slog (C-style with Function Pointers)
+### Using slog 
 
-The component provides a global `slog` instance that uses C struct with function pointers:
+The component provides a global `slog` instance :
 
 ```c
 #include "idflog.h"
