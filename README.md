@@ -22,7 +22,13 @@ A flexible and lightweight logging component for ESP-IDF projects that provides 
    git submodule add https://github.com/yourusername/slog-component.git slog
    ```
 
-2. Update your project's CMakeLists.txt to include the component (if not automatically detected):
+2. To use a specific version (recommended for stability):
+   ```bash
+   cd your_project/components/slog
+   git checkout v0.1
+   ```
+
+3. Update your project's CMakeLists.txt to include the component (if not automatically detected):
    ```cmake
    # In your main CMakeLists.txt
    set(EXTRA_COMPONENT_DIRS components/slog)
@@ -35,6 +41,7 @@ Add to your project's `idf_component.yml`:
 dependencies:
   slog:
     git: https://github.com/yourusername/slog-component.git
+    version: v0.1  # Use specific version for stability
 ```
 
 ## Usage
@@ -177,19 +184,6 @@ To use this component in your ESP-IDF project:
 2. Include the header: `#include "idflog.h"`
 3. Initialize with `idflog_init()`
 4. Start logging with the `slog` instance or standalone functions
-
-## Key Features
-
-### C Struct with Function Pointers
-This component implements object-oriented patterns in C using:
-- Function pointers as "methods"
-- Self pointer parameter (like `this` in C++)
-- Multiple instances support
-- Clean C-style naming conventions (`snake_case`)
-
-### Two Usage Patterns
-1. **Object-style**: `slog.i(&slog, "message")` - Uses struct with function pointers
-2. **Functional-style**: `IDFLOG_I("message")` - Traditional C functions and macros
 
 ## License
 

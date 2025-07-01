@@ -1,7 +1,7 @@
 ## IDF Component Manager Manifest File
-version: "1.0.0"
-description: "ESP-IDF Logging Component - A flexible logging system for ESP32 projects"
-url: https://github.com/yourusername/idflog-component
+version: "0.1.0"
+description: "SLOG - ESP-IDF Logging Component with C struct function pointers"
+url: https://github.com/yourusername/slog-component
 dependencies:
   # Component dependencies
   idf:
