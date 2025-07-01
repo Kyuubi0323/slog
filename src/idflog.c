@@ -24,9 +24,9 @@ unsigned long get_millis(void)
 }
 
 /**
- * @brief Get level name string with brackets (Arduino style)
+ * @brief Get level name string with brackets (slog style)
  */
-static const char* timber_level_name(idflog_level_t level)
+static const char* slog_level_name(idflog_level_t level)
 {
     switch (level) {
         case IDFLOG_DEBUG:   return "[DEBUG]";
@@ -85,9 +85,9 @@ static void slog_send_logs(slog_t* self, idflog_level_t level, const char* messa
     char msg[512];
     
     if (self->_time) {
-        snprintf(msg, sizeof(msg), "%lu %s: %s\n", time, timber_level_name(level), message);
+        snprintf(msg, sizeof(msg), "%lu %s: %s\n", time, slog_level_name(level), message);
     } else {
-        snprintf(msg, sizeof(msg), "%s: %s\n", timber_level_name(level), message);
+        snprintf(msg, sizeof(msg), "%s: %s\n", slog_level_name(level), message);
     }
     
     if (self->logging_callback != NULL) {
