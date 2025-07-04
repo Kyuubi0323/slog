@@ -19,13 +19,13 @@ A flexible and lightweight logging component for ESP-IDF projects that provides 
 1. Add this repository as a submodule to your ESP-IDF project's `components` directory:
    ```bash
    cd your_project/components
-   git submodule add https://github.com/yourusername/slog-component.git slog
+   git submodule add https://github.com/Kyuubi0323/slog slog
    ```
 
 2. To use a specific version (recommended for stability):
    ```bash
    cd your_project/components/slog
-   git checkout v0.1
+   git checkout v0.3
    ```
 
 3. Update your project's CMakeLists.txt to include the component (if not automatically detected):
@@ -40,8 +40,8 @@ Add to your project's `idf_component.yml`:
 ```yaml
 dependencies:
   slog:
-    git: https://github.com/yourusername/slog-component.git
-    version: v0.1  # Use specific version for stability
+    git: https://github.com/Kyuubi0323/slog
+    version: v0.3  # Use specific version for stability
 ```
 
 ## Usage
